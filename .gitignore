@@ -1,17 +1,41 @@
+HELP.md
+.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Example user template template
 ### Example user template
 
-# IntelliJ project files
-.idea
-*.iml
-out
-gen### Example user template template
 ### Example user template
 
 # IntelliJ project files
-.idea
-*.iml
 out
 gen### Maven template
 target/
@@ -48,11 +72,6 @@ buildNumber.properties
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-### Gradle template
-.gradle
-/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -95,9 +114,6 @@ cmake-build-release/
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-# File-based project format
-*.iws
-
 # IntelliJ
 out/
 
@@ -118,4 +134,3 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
-

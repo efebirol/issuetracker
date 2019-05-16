@@ -1,13 +1,10 @@
-package data.webservice;
+package com.example.demo.controller;
 
 
-import data.entity.Developer;
-import data.repository.DeveloperRepository;
+import com.example.demo.entity.Developer;
+import com.example.demo.repository.DeveloperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +21,23 @@ public class DeveloperController {
             Iterable<Developer> results = this.repository.findAll();
             results.forEach(developer-> {developers.add(developer);});
         }else{
-            Developer developer = this.repository.findByNumber(name);
+            Developer developer = this.repository.findByName(name);
             if(null!=developer) {
                 developers.add(developer);
             }
         }
         return developers;
     }
+
+    @GetMapping( "/add")
+    public String addDeveloper(){
+        return "add Developer";
+    }
+
+    @GetMapping( "/remove")
+    public String removeDeveloper(){
+        return "remove Developer";
+    }
+
+
 }

@@ -9,16 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/hello")
 public class HelloController {
 
-    @GetMapping( "/sayHello")
-    public String hello(){
+    @GetMapping("/sayHello")
+    public String hello() {
 
         return "Hello";
     }
 
-    @GetMapping( "/sayHello/{name}")
-    public String helloxx(@PathVariable String name){
+    @GetMapping("/sayHello/{name}")
+    public String helloxx(@PathVariable String name) {
 
-        return "Hello"+ name;
+        return "Hello" + name;
+    }
+
+    @GetMapping("/testoutput")
+    public String simpleDeveloperOutput() {
+        return "Hi DeveloperService here";
     }
 
 

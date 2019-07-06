@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -19,8 +20,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 @Controller
 @RequestMapping(value = "/getdeveloperscontroller")
 public class DeveloperController {
-    @Autowired
-    private DeveloperRepository repository;
+
     @Autowired
     private DeveloperService developerService;
 
@@ -45,12 +45,14 @@ public class DeveloperController {
     public String removeDeveloper() {
         logger.info("-- DeveloperController - Remove a developer");
 
+        //Thymeleaf calls .html-Template with return-String value
         return "removedeveloper";
     }
 
     //1. Lösung - GET (REST)
     @RequestMapping(method = RequestMethod.GET)
     public String getDevelopers(Model model){
+        logger.info("-- DeveloperController - GET a developer");
 
         //hole mir die List von Developers
         List<DeveloperList> developerLists = this.developerService.getAllDeveloperList();
@@ -61,10 +63,13 @@ public class DeveloperController {
         return "getdeveloperspage";
     }
 
-    //2. Lösung - GET (REST)
-    //Mapping für die Developer (Teste mit Postman-Tool)
-    /*@RequestMapping(value = "/developers/list", method = RequestMethod.GET)
-    List<Developer> findAll(@RequestParam(required = false) String name) {
-        return developerService.ListDevelopers(repository, name);
-    }*/
+    //"@ResponseBody", um nicht über Thymeleaf gleich die View anzusteuern
+    @RequestMapping(value = "/teststring", method = RequestMethod.GET)
+    @ResponseBody
+    public String getDevelopersTeststring(){
+        logger.info("-- DeveloperController - output for string");
+
+        return this.developerService.simpleDeveloperOutput();
+    }
+
 }

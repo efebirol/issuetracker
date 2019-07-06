@@ -24,6 +24,10 @@ public class DeveloperService {
 
     }
 
+    //ToDo: Schreibe eine Test der genau nur diesen String überprüft
+    public String simpleDeveloperOutput(){
+        return "Hi DeveloperService here";
+    }
 
     public void AddDevelopers() {
         System.out.println("Add Developers");

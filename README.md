@@ -5,10 +5,12 @@
 Build a very small scale web application.
 
 ## Endpoints
-
-/h2-console
+```
+http://localhost:8080/h2-console
 ```
 - Login to the database at http://localhost:8080/h2-console and enter
+
+```
 JDBC URL: jdbc:h2:mem:testdb
 User Name: sa
 Pasword: <leave this empty>
